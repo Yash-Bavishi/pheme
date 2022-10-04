@@ -1,0 +1,96 @@
+/* left: -20%;
+*
+*
+*
+*
+*
+* */
+
+/* Font variables */
+
+:root {
+  --heading-size: 0.875rem;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+.green-square {
+  position: absolute;
+  top: 25%;
+  left: -10%;
+  width: 43vh;
+  height: 43vh;
+  transform: rotate(45deg);
+  transform-origin: center;
+  background-color: #67BB8A;
+}
+
+.orange-square {
+  position: absolute;
+  top: 25%;
+  right: -10%;
+  width: 43vh;
+  height: 43vh;
+  transform: rotate(45deg);
+  transform-origin: center;
+  background-color: #FFC704;
+}
+
+.hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+nav {
+  width: 100%;
+  margin-top: 2rem;
+  font-size: var(--heading-size);
+}
+
+.hero > nav > ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
