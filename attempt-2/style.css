@@ -21,40 +21,33 @@
     overflow-x: hidden;
 }
 
-.main-hero {
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-}
-
 .hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
+  position: relative;
   width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .green-square {
-  position: absolute;
-  top: 25%;
   left: -10%;
   width: 43vh;
   height: 43vh;
   transform: rotate(45deg);
   transform-origin: center;
   background-color: #67BB8A;
+  margin-left: -9.375rem;
 }
 
 .orange-square {
-  position: absolute;
-  top: 25%;
   right: -10%;
   width: 43vh;
   height: 43vh;
   transform: rotate(45deg);
   transform-origin: center;
   background-color: #FFC704;
+  margin-right: -9.375rem;
 }
 
 .hero {
@@ -84,8 +77,6 @@ nav {
   padding-bottom: 2rem;
 }
 
-.hero > div > h1 {
-}
 
 .hero > nav > ul {
   display: flex;
@@ -93,28 +84,10 @@ nav {
   align-items: center;
 }
 
-.content {
-  max-width: 71vw;
-  max-height: 71vh;
-  margin: 20px auto; 
-}
 
-.content-item {
-  margin: 3.25rem 0;
-  display: flex;
-  flex-direction: start;
-  gap: 10.56rem;
-}
 
-.content-item > div > p > span {
-  padding: 0 2rem;
-}
 
-.content-item > div {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+
 
 
 
