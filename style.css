@@ -10,6 +10,9 @@
 
 :root {
   --heading-size: 0.875rem;
+  --font-weight: 400;
+  --times-roman: 'Times New Roman', Times, Serif;
+  --arial: Arial, Helvetica, sans-serif;
 }
 
 
@@ -20,6 +23,7 @@
     box-sizing: border-box;
     overflow-x: hidden;
 }
+
 
 .main-hero {
   width: 100vw;
@@ -84,16 +88,41 @@ nav {
   padding-bottom: 2rem;
 }
 
-.hero > div > h1 {
+.hero > div {
+  text-align: center;
 }
 
+.hero > div > h1 {
+    font-family: var(--times-roman);
+    font-size: 6.875rem;
+    font-weight: 400;
+    line-height: 8.25rem;
+}
+
+.hero > div > h2 {
+    font-family: var(--times-roman);
+    font-size: 3.125rem;
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(88, 165, 120, 1);
+    line-height: 3.75rem;
+}
 .hero > nav > ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: var(arial)
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 30, 38, 1);
+  color: white;
 }
 
 .content {
+  overflow-y: hidden;
   max-width: 71vw;
   max-height: 71vh;
   margin: 20px auto; 
@@ -106,9 +135,22 @@ nav {
   gap: 10.56rem;
 }
 
+.content-item h4 {
+  width: 121px;
+  font-size: 14px;
+}
+
+.content-item h6 {
+  width: 110px;
+  font-size: 12px;
+}
+
 .content-item > div > p > span {
   padding: 0 2rem;
 }
+
+
+
 
 .content-item > div {
   display: flex;
