@@ -290,18 +290,25 @@ nav {
 @media screen and (max-width: 500px) {
   .green-square {
     position: absolute;
-    top: 90%;
-    width: 9.375rem;
-    height: 9.375rem;
+    top: 70%;
+    left: -15%;
+    width: 12.5rem;
+    height: 12.5rem;
   }
 
   .orange-square {
     position: absolute;
     top: 10%;
-    width: 150px;
-    height: 150px;
+    right: -15%;
+    width: 12.5rem;
+    height: 12.5rem;
   }
   
+  .hero {
+    width: 90vw;
+    height: 90vh;
+  } 
+
   .hero > nav > ul {
     flex-direction: column;
     align-items: flex-start;
@@ -323,5 +330,23 @@ nav {
   .hero > div > h2 {
     display: none;
   } 
+
+
+  .content-item {
+    /*gap: 4.0625rem;*/
+    gap: 1.0625rem;
+  }
+  .content-item > h4 {
+    width: 200%;
+  }
+
+  .content-summary > span {
+    display: none;
+  }
+
+ .content-header {
+  gap: 4.0625rem;
+ } 
+
 
 }
