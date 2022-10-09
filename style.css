@@ -38,6 +38,7 @@
   left: 0;
   height: 100vh;
   width: 100vw;
+  background-color: #f0ebe8;
 }
 
 .green-square {
@@ -97,6 +98,7 @@ nav {
 
 #header > ul > li > div > small {
   opacity: 0.5;
+  font-size: 0.625rem;
 }
 
 #footer {
@@ -125,7 +127,11 @@ nav {
     font-size: 3.125rem;
     font-style: italic;
     font-weight: 400;
-    color: rgba(88, 165, 120, 1);
+    background: linear-gradient(90deg, #58A578 20.05%, #00FF6A 77.95%), #000000;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
     line-height: 3.75rem;
 }
 
@@ -163,7 +169,6 @@ nav {
 
 .wrapper {
   width: 100vw;
-  height: 100vh;
   background-color: rgba(0, 30, 38, 1);
   color: white;
 }
@@ -193,8 +198,12 @@ nav {
   font-size: 0.875rem;
 }
 
+.content-header:nth-child(1) {
+  font-weight: 400;
+}
+
 .content-header:nth-child(1) h6:nth-child(1){
-  width: 8.5%;
+  width: 10.175%;
 }
 
 .content-item {
@@ -237,33 +246,45 @@ nav {
   font-weight: 400;
 }
 */
-.content-item > div > p > span {
+
+.content-item > div > small {
+  font-size: 0.875rem;
+}
+
+.content-item > div > small > span {
   padding: 0 2rem;
 }
 
 .content-item > div {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.25rem;
 }
 
-.content-item > div > h1 {
+.content-summary h1 {
   font-family: var(--times-roman);
   font-weight: 400;
   font-style: bold;
 }
 
-.content-item > div > p {
+.content-summary > p {
   opacity: 0.5;
   font-family: var(--arial);
   font-weight: 400;
-  letter-spacing: 0.1rem;
   line-height: 150%;
 }
+
+.content-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem
+}
+
 
 .content-item > div > small {
   font-family: var(--arial);
   font-weight: 400;
+  font-size: 0.875rem;
 }
 
 @media screen and (max-width: 500px) {
