@@ -331,22 +331,28 @@ nav {
     display: none;
   } 
 
+  .content {
+    max-width:90vw;
+    width: 100%;
+    margin: 20px 20px;
+  }
+
+  .content-header {
+    gap: 5.8rem;
+  }
 
   .content-item {
     /*gap: 4.0625rem;*/
     gap: 1.0625rem;
   }
   .content-item > h4 {
-    width: 200%;
+    width: 100%;
   }
 
   .content-summary > span {
     display: none;
   }
 
- .content-header {
-  gap: 4.0625rem;
- } 
 
 
 }
