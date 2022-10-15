@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+ }
+
+:root {
+  --sm: 0.875rem;
+  --times-roman: 'Times New Roman', Times, Serif;
+  --arial: Arial, Helvetica, sans-serif;
+}
+
+.green-square {
+  position: absolute;
+  top: 25%;
+  left: -10%;
+  width: 43vh;
+  height: 43vh;
+  transform: rotate(45deg);
+  transform-origin: center;
+  background-color: #67BB8A;
+  transition: ease all .5s;
+}
+
+.orange-square {
+  position: absolute;
+  top: 25%;
+  right: -10%;
+  width: 43vh;
+  height: 43vh;
+  transform: rotate(45deg);
+  transform-origin: center;
+  background-color: #FFC704;
+  transition: ease all .5s;
+}
+
+.wrapper {
+  margin: 0 8.25rem;
+}
+
+.hero > nav {
+  font-family: var(--arial);
+}
+
+.hero > nav > ul > li {
+  font-size: var(--sm); 
+}

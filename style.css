@@ -16,7 +16,6 @@
 }
 
 
-
 * {
     margin: 0;
     padding: 0;
@@ -286,6 +285,31 @@ nav {
   font-weight: 400;
   font-size: 0.875rem;
 }
+
+.document-wrapper {
+  margin: 0 8.25rem;
+}
+
+.document-hero {
+  text-align: center;
+}
+
+.doc-hero {
+  font-weight: var(--times-roman);
+  justify-content: flex-start;
+  gap: 7.5625rem;
+}
+
+.doc-content > p {
+  font-style: italic;
+  line-height: 1.8rem;
+}
+
+.doc-content > p > span {
+  text-decoration: underline;
+}
+
+/* Mobile time */
 
 @media screen and (max-width: 500px) {
   .green-square {
