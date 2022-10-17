@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>The Basics</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5edfe13f-0c6d-4560-b170-84b5c814088b" class="page serif"><header><img class="page-cover-image" src="The%20Basics%205edfe13f0c6d4560b17084b5c814088b/The_Basics.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🧠</span></div><h1 class="page-title">The Basics</h1></header><div class="page-body"><p id="b08ff5b2-bde7-4980-bf05-7266827a6b30" class="">⏰ 8 Mins Read Time</p><div id="93790c32-928d-478c-bf8a-d7d1e7f125f0" class="column-list"><div id="44d3cc33-5ceb-4bf5-9ebd-b8f997d90c33" style="width:50%" class="column"><p id="fda83bc7-1205-4fb1-abe4-35e2c6808ce8" class="">In this, we will cover what News is at its core and learn things that we should be aware of.  While building it is not just about the users but also about the domain itself so this will give you a good understanding of what news is all about.</p><p id="cff73e4c-5a5e-4aab-a6dc-73d7746f42e1" class="">
+</p></div><div id="5de9069c-ea90-4378-b683-45233807a782" style="width:49.99999999999999%" class="column"><p id="1b14d79e-dd8e-4573-8de2-57528e150177" class=""><mark class="highlight-gray">Note: This is a summarized version of what we have learned after researching. Please note there is more to news than what we can write here so if you wish to learn more please check the sources page to discover the articles and videos that we have learned from. Have Fun :D</mark></p></div></div><ul id="cd706f5e-a7fa-4583-9413-247f0d5e1b9e" class="toggle"><li><details open=""><summary>Table of Content </summary><nav id="2874985b-a090-49f7-8565-d6d5bfb6e520" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#90734c3f-c96b-4a02-8c5e-bd048b87ba78">WTF is News</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#4f10d445-6acb-4e37-9dfe-7267c1239b80">What do journalists say when asked, “What is news?”</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d394b813-4448-4bbe-8c06-1f15f3f3d78c">Criteria of News</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#ce45d6d4-5551-4809-a372-e4fa7161b148">Is it New?</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#6aaac291-747b-4ae1-af05-20b87b809dab">Is it Unusual?</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#7100e4be-40c6-4254-9721-086504d84743">Is it Interesting?</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#3ca86f19-7e50-4510-b65f-79f6107f36f8">Is it Significant?</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#473de5f0-19d0-4299-bd64-b0541b946889"><strong>Is it about people?</strong></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0b49c97e-a6e5-4521-90fa-5558cb0f31e2">Categories &amp; Topics</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#51e9214d-273d-4e4b-a52c-defc91b932a0">Breaking News</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#8c29f52d-4d4c-446b-8f93-2212ee27d9c8">News as a commodity</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a73f98b5-6ed3-4c9c-803c-bc105ce667cd">Biases</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#093f0f90-3508-44a0-ad91-fb1b753cad63">Anonymous Sources</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#4a7e4874-5093-4b9b-9fd5-4e7762b66a47">Agencies</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7e1f43d3-bb8b-40db-ba6b-9d8b71cf0cdc">News Agencies</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0d50b1e9-9b84-41a3-99b4-1fb61555f6f5">News Media</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5b572cf5-2a31-43b0-9710-ceab58f70424">Aggregators</a></div></nav></details></li></ul><h1 id="90734c3f-c96b-4a02-8c5e-bd048b87ba78" class="">WTF is News</h1><p id="71397e05-8887-4dfa-bffd-0a10951f1402" class="">Life appears to be a shapeless jumble of events, falling over each other, elbowing and jostling each other. Journalists each day structure this chaos, so that the public receives it sorted out and neatly packaged into stories, the same day on the radio, television or online and the next day in newspapers.</p><p id="7fde82ac-d6f8-4949-854a-4419e16ad05f" class="">News is information about current events. People seem to be interested in news to the extent that it has a big impact, describes conflicts, happens nearby, involves well-known people, and deviates from the norms of everyday happenings</p><p id="37f190b2-0f74-40d6-9fe1-d684ba555462" class="">
+</p><h2 id="4f10d445-6acb-4e37-9dfe-7267c1239b80" class="">What do journalists say when asked, “What is news?”</h2><p id="d372a78e-11de-4381-a3e1-acd245e7be2e" class=""><mark class="highlight-gray">Disclaimer: With many quotes, there are ongoing disputes about the precise wording, translation or attribution.</mark></p><div id="12a25277-0001-4be2-8eaf-e8e1da4daa5d" class="column-list"><div id="35a07f95-a7ea-45ab-ae5c-9e8bca459128" style="width:50%" class="column"><figure id="2e2db0a4-5364-4601-956b-e7dbf4e6516c" class="image" style="text-align:left"><a href="The%20Basics%205edfe13f0c6d4560b17084b5c814088b/Untitled.png"><img style="width:520px" src="The%20Basics%205edfe13f0c6d4560b17084b5c814088b/Untitled.png"/></a><figcaption><mark class="highlight-gray"><em>Charles Anderson Dana, American journalist, 1819-1897</em></mark></figcaption></figure></div><div id="04568f1e-ef14-48a2-a488-02b630d677bf" style="width:50%" class="column"><p id="4194d6fd-c11d-485d-b215-f1e4e2f6d1c1" class="">
+</p><blockquote id="27132292-3fbc-4742-9b9e-dcdbf3c4232c" class="">When a dog bites a man that is not news, but when a man bites a dog that is news.</blockquote><p id="b938fb7d-a3e1-42e5-8de1-c05af1c47057" class=""><mark class="highlight-gray"><em>Charles Anderson Dana, American journalist, 1819-1897</em></mark></p><p id="f2bb0c79-53a7-41b5-bdf0-f1321577afd9" class="">
+</p><blockquote id="8bd9ea84-b0f0-45c3-b092-1ac1dbaed648" class="">What you see is news, what you know is background, what you feel is opinion.</blockquote><p id="799bc8fd-9ce1-4f1c-ad98-464408be557f" class=""><mark class="highlight-gray"><em>Lester Markel, American journalist, 1894-1977</em></mark></p><p id="d225833e-ac0e-4abf-89dc-e4cb06611e42" class="">
+</p><p id="bcfcb70c-30c3-4c81-8325-f76dc03eb3f2" class="">
+</p></div></div><h2 id="d394b813-4448-4bbe-8c06-1f15f3f3d78c" class="">Criteria of News</h2><p id="f032dd67-5e68-441a-8a10-1f331e53aa34" class="">The criteria by which news is judged are:</p><ul id="1d198413-c9a6-4ae7-b483-4cb6d762f22f" class="bulleted-list"><li style="list-style-type:disc">Is it new?</li></ul><ul id="635bfe50-d3ef-426e-94be-d6ee3eb29695" class="bulleted-list"><li style="list-style-type:disc">Is it unusual?</li></ul><ul id="f1386565-e5e5-4283-9d6b-d136d180bb6d" class="bulleted-list"><li style="list-style-type:disc">Is it interesting or significant?</li></ul><ul id="a0666b9c-dc1b-4950-9248-fe546a45d73e" class="bulleted-list"><li style="list-style-type:disc">Is it about people?</li></ul><p id="5909bbfe-cfbc-424b-8636-aa846dbc4eca" class="">These elements make up what we call the &quot;news value&quot; of information. The stronger the elements are, the higher the news value.</p><h3 id="ce45d6d4-5551-4809-a372-e4fa7161b148" class="">Is it New?</h3><p id="c5898ede-1c6e-4591-8825-4285d63614ad" class="">If new information about an event that happened in the past is revealed, it is considered news. News of the death of Mao Tse-tung, for instance, was not released to the world by the Chinese government for several days; when they did release it, however, it was still very definitely news.</p><h3 id="6aaac291-747b-4ae1-af05-20b87b809dab" class="">Is it Unusual?</h3><p id="65d72f59-428b-4244-bc70-51e19a0e52b8" class="">Different societies have different ideas of what is &quot;usual.&quot; Something that is considered usual in one society might be considered unusual in another society. Also, the news in each society is going to be different because it will be about what is happening in that society, and what is considered unusual in that society.</p><p id="2102672a-0ce5-496a-9756-5c1a2780ce7c" class="">The classic definition of news is this: &quot;Dog bites man&quot; is not news; &quot;Man bites dog&quot; is news. This definition, though, is not universal. If dogs are eaten in your society (at feasts, for instance) then it will not be news when a man bites a dog - so long as it has been cooked.</p><h3 id="7100e4be-40c6-4254-9721-086504d84743" class="">Is it Interesting?</h3><p id="93efbe90-20ee-4abf-9750-7fad87942773" class="">Even if something is new and different, it might not be interesting to most people. Scientists might find a new bug living on a plant, but unless you&#x27;re a specialist or enthusiast, you probably wouldn&#x27;t care. In a news broadcast or paper, something like this would only get a few words.</p><h3 id="3ca86f19-7e50-4510-b65f-79f6107f36f8" class="">Is it Significant?</h3><p id="485c1a5d-876a-4983-a819-52a8cceaf207" class="">If an insect that normally eats bush grass is found on a rice plant, it is newsworthy because it is significant as the insect may be threatening crops, which is a concern to people.</p><p id="5b3fe50e-87d1-48f4-9f14-8c42b7d79e9a" class="">Similarly, if a peasant says that the Roman Catholic Church should ordain women priests that won’t be considered news but if the same statement was made by an archbishop it will be news because of the significance and influence of the personality. In this case, the archbishop helps to form the policy of the Church compared to a peasant who just makes his opinion heard.</p><h3 id="473de5f0-19d0-4299-bd64-b0541b946889" class=""><strong>Is it about people?</strong></h3><p id="52f9fc28-3769-4d77-883f-fc4019ceeb05" class="">A cyclone is a big storm that can cause a lot of damage. Fire can burn for a long time and destroy things. The Sahara Desert is a place where it does not rain very often. An earthquake can damage buildings and hurt people. These things become news when they affect people&#x27;s lives.</p><h2 id="0b49c97e-a6e5-4521-90fa-5558cb0f31e2" class="">Categories &amp; Topics</h2><p id="e5ad9adc-3bfa-4d11-b38b-47f3451d9c42" class="">There are four major categories of the news based on location which are International, National, Regional and Local and then there are multiple topics war, government, politics, education, health, the environment, economy, business, fashion, entertainment, sport, as well as quirky or unusual events.</p><p id="5c890250-207e-4e5d-ad40-c981c0d071e9" class="">Journalists, Publishers and Editors specialize in one or a combination of categories and topics. Let’s take a look at a couple of examples</p><table id="2ef29c6a-b23e-45e0-a3bd-4f6097badddd" class="simple-table"><thead class="simple-table-header"><tr id="6dc7f902-a4d5-48f7-806a-addc79eb63a3"><th id="L~Hs" class="simple-table-header-color simple-table-header" style="width:232.66666666666666px">📣 Outlet</th><th id="I\g|" class="simple-table-header-color simple-table-header" style="width:232.66666666666666px">📍 Category (Location)</th><th id="cIz@" class="simple-table-header-color simple-table-header" style="width:232.66666666666666px">⭐ Topic</th></tr></thead><tbody><tr id="987848ae-d3e9-41f7-aec8-6cea3a3ebf42"><td id="L~Hs" class="" style="width:232.66666666666666px">CNBC TV18</td><td id="I\g|" class="" style="width:232.66666666666666px">National &amp; International</td><td id="cIz@" class="" style="width:232.66666666666666px">Business &amp; Economy</td></tr><tr id="902fedc3-79c7-4722-a81f-c1987100c8e2"><td id="L~Hs" class="" style="width:232.66666666666666px">News18 India</td><td id="I\g|" class="" style="width:232.66666666666666px">National, Regional &amp; Local</td><td id="cIz@" class="" style="width:232.66666666666666px">All Topics</td></tr><tr id="0150dafa-89f9-4950-b1ba-0d3e96786660"><td id="L~Hs" class="" style="width:232.66666666666666px">TechCrunch</td><td id="I\g|" class="" style="width:232.66666666666666px">International</td><td id="cIz@" class="" style="width:232.66666666666666px">Technology</td></tr></tbody></table><h2 id="51e9214d-273d-4e4b-a52c-defc91b932a0" class="">Breaking News</h2><p id="5ba2c21a-9bac-4bf9-a2cb-773fdbbe1b2b" class="">News that has either just happened or is currently happening. Breaking news articles may contain incomplete information, factual errors, or poor editing because of a rush to publication. Traditionally Breaking news interchangeably termed late-breaking news and also known as a special report or special coverage or news flash, is a current issue that broadcasters feel warrants the interruption of scheduled programming or current news in order to report its details.</p><p id="647a097c-cf1f-42ab-944c-5c955ef782f9" class="">This means that when there is a lot of chaos and confusion going on, it&#x27;s best not to try to follow what&#x27;s happening in real time. This is because sometimes the media (like TV and the internet) will try to give continuous coverage even when there is no new information available. This can sometimes lead to incorrect information being given, or innocent people being accused of things they didn&#x27;t do.</p><h1 id="8c29f52d-4d4c-446b-8f93-2212ee27d9c8" class="">News as a commodity</h1><p id="320d6814-18ec-48c2-8da6-eb13c4c5800e" class="">The news is whatever the news industry sells. Journalism is the act or occupation of collecting and providing news. A news agency supplies this resource &quot;wholesale&quot; and publishers enhance it for retail. This may be efficient and has an incentive for people to pursue news but the incentive of having millions consuming your stories brings a lot of responsibility, biases and interests.</p><h1 id="a73f98b5-6ed3-4c9c-803c-bc105ce667cd" class="">Biases</h1><p id="3ef7880e-8eb3-48e8-98b7-25ec12466dc9" class="">Reporters, Journalists and Agencies knowingly or unknowingly have a bias in the content they publish. These biases could be psychological or present themselves in a true form like partnerships with public or private organizations. So as a reader it’s very important to understand the difference between fact and opinion. </p><h1 id="093f0f90-3508-44a0-ad91-fb1b753cad63" class="">Anonymous Sources</h1><p id="2a376aa6-02fa-4cbe-ae00-50fca31839e8" class="">Sharing important pieces of information to educate and aware people without risking ones identity is very important and life-saving at times but this is just one side of the coin. A person who provides information to a reporter anonymously may not have a lot to do with the story, or they may be trying to influence how the story is reported. Because they are anonymous, we don&#x27;t know who they are and they can&#x27;t be held responsible for the information they provide. </p><h1 id="4a7e4874-5093-4b9b-9fd5-4e7762b66a47" class="">Agencies</h1><p id="e80eff65-7bef-4ed8-901d-a3f5a12155ac" class="">There are news aggregators and then there are media outlets that generate news. You could be working for either of them but their work is in tandem with each other so it&#x27;s important how everyone works.</p><h3 id="7e1f43d3-bb8b-40db-ba6b-9d8b71cf0cdc" class="">News Agencies</h3><p id="d29b2955-be76-42a5-85b3-c3ade115c85b" class="">A news agency is an organization that gathers news reports and sells them to subscribing news organizations, such as newspapers, magazines and radio and television broadcasters. A news agency may also be referred to as a wire service, newswire, or news service.</p><h3 id="0d50b1e9-9b84-41a3-99b4-1fb61555f6f5" class="">News Media</h3><p id="eb04501f-be0a-4850-832a-98939e03e58c" class="">The news media or news industry are forms of mass media that focus on delivering news to the general public or a target public. These include print media (newspapers, news magazines), broadcast news (radio and television), and the Internet (online newspapers, news blogs, news videos, live news streaming, etc.).</p><h3 id="5b572cf5-2a31-43b0-9710-ceab58f70424" class="">Aggregators</h3><p id="a98155c4-0f21-4b0f-9e7a-85484d136b17" class="">Collects news stories and other information as they are published and organizes them in a specific manner. Some aggregators are curated by people to whom certain types of information are of particular importance</p><hr id="a8ac7323-f538-4d58-9018-813c548640ca"/><div id="e80a2ed2-8ee3-4085-984a-d5e8567a4c02" class="column-list"><div id="1ab01837-5426-4572-b3b1-b54a32eb2b32" style="width:62.5%" class="column"><p id="c89bc3bf-e005-4847-8d64-75094372264d" class="">Up Next →</p></div><div id="ff878236-a105-4371-9cba-e460cd0bf7a9" style="width:37.50000000000001%" class="column"><p id="fdf2a2a7-a07b-4e94-b754-dd2a5c6c104f" class=""><a href="https://www.notion.so/About-Content-60511551d4ff47a1bd2c1e02b703c612"><span class="icon">✒️</span>About Content</a></p></div></div><p id="5db8a73d-bffd-4bdc-8ad0-44f1f540c743" class="">
+</p></div></article></body></html>
